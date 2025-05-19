@@ -16,10 +16,6 @@ const nextConfig = {
       },
     ];
   },
-  // Explicitly set the experimental features
-  experimental: {
-    serverActions: true,
-  },
 };
 
 module.exports = nextConfig;
