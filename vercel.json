@@ -1,18 +1,3 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "outputDirectory": ".next",
-  "env": {
-    "MONGODB_URI": "@mongodb_uri",
-    "NEXTAUTH_SECRET": "@nextauth_secret",
-    "NEXTAUTH_URL": "@nextauth_url",
-    "NEXT_PUBLIC_DOMAIN": "@next_public_domain"
-  },
-  "github": {
-    "silent": true,
-    "autoJobCancelation": true
-  }
+  "framework": "nextjs"
 }

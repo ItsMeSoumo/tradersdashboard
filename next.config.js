@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   // Ensure API routes work properly
   async headers() {
     return [
@@ -15,14 +16,6 @@ const nextConfig = {
       },
     ];
   },
-  // Ensure proper output directory for Vercel
-  distDir: '.next',
-  // Disable image optimization if causing issues
-  images: {
-    unoptimized: true
-  },
-  // Output mode for better compatibility
-  output: 'standalone',
 };
 
 module.exports = nextConfig;
