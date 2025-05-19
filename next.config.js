@@ -1,26 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Ensure API routes work properly
-  async headers() {
-    return [
-      {
-        source: '/api/:path*',
-        headers: [
-          { key: 'Access-Control-Allow-Credentials', value: 'true' },
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT' },
-          { key: 'Access-Control-Allow-Headers', value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version' },
-        ],
-      },
-    ];
-  },
-  // Explicitly set the experimental features
+  swcMinify: true,
+  // Use the default output mode instead of standalone
+  // output: 'standalone',
+  distDir: '.next',
+  // Ensure routes manifest is generated correctly
   experimental: {
-    serverActions: {
-      allowedOrigins: ['localhost:3000', 'tradersdashboard.vercel.app']
-    }
+    // These settings help with proper route manifest generation
+    serverComponentsExternalPackages: [],
+    appDir: true,
   },
-};
+  // Add any environment variables you need here
+  env: {
+    // Add your environment variables here if needed
+  },
+  // This ensures that Next.js generates the routes-manifest.json file
+  generateBuildId: async () => {
+    return 'my-build-id'
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
