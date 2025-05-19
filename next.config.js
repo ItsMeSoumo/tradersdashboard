@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   // Ensure API routes work properly
   async headers() {
     return [
@@ -18,7 +17,9 @@ const nextConfig = {
   },
   // Explicitly set the experimental features
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['localhost:3000', 'tradersdashboard.vercel.app']
+    }
   },
 };
 
