@@ -15,6 +15,14 @@ const nextConfig = {
       },
     ];
   },
+  // Ensure proper output directory for Vercel
+  distDir: '.next',
+  // Disable image optimization if causing issues
+  images: {
+    unoptimized: true
+  },
+  // Output mode for better compatibility
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
