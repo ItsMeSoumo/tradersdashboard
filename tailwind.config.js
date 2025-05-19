@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'monospace'],
       },
       colors: {
         primary: {
@@ -28,4 +29,7 @@ module.exports = {
     },
   },
   plugins: [],
+  corePlugins: {
+    preflight: true,
+  },
 }
