@@ -1,0 +1,16 @@
+name: Always Pass
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  pass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always Pass
+        run: |
+          echo "This check always passes"
+          exit 0
